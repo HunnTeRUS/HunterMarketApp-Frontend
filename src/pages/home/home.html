@@ -1,18 +1,32 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2> Sign In </h2>
+    <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="assets/imgs/login.png"/>
+    </div>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    <!-- Login Form -->
+    <form>
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email">
+      <input type="password" pattern="*" id="password" class="fadeIn third" name="login" placeholder="Password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">I wanna make an account</a>
+    </div>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password</a>
+    </div>
+
+  </div>
+</div>
 </ion-content>
