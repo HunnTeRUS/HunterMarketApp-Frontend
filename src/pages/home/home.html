@@ -12,8 +12,8 @@
 
     <!-- Login Form -->
     <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email">
-      <input type="password" pattern="*" id="password" class="fadeIn third" name="login" placeholder="Password">
+      <input type="text" id="email" [(ngModel)]="credenciais.email" name="email" class="fadeIn second" placeholder="Email">
+      <input type="password" [(ngModel)]="credenciais.senha" name="senha" id="senha" class="fadeIn third" placeholder="Password">
       <input type="submit" (click)="login()" class="fadeIn fourth" value="Log In">
     </form>
 
