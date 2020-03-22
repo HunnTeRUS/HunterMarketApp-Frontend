@@ -13,6 +13,35 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-<p>Categories Page</p>
+<ion-content >
+    <!-- <ion-list>
+    <button ion-item *ngFor="let item of items">
+      <ion-thumbnail item-start>
+          <img src="assets/imgs/apple-pay-1582892364.gif" width="50%">
+      </ion-thumbnail>
+      <h2>{{ item.nome }}</h2>
+      <p>Hi to everyone</p>
+    </button>
+  </ion-list> -->
+
+<button ion-item *ngFor="let item of items">  
+  <ion-card>
+    <ion-card-header>
+      <h2>{{ item.nome }}</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <img *ngIf="item.nome == 'Informatica'" src="assets/imgs/apple-pay-1582892364.gif">
+      <img *ngIf="item.nome == 'Escritorio'" src="assets/imgs/cover-21-tips-for-building-the-perfect-home-office-1584704111.gif">
+      <img *ngIf="item.nome == 'Gamer'" src="assets/imgs/giphycopy.gif">
+      <img *ngIf="item.nome == 'Cozinha'" src="assets/imgs/Food-waste-Tip1-Plan-before-you-buy.gif">
+      <img *ngIf="item.nome == 'Cama/Mesa/Banho'" src="assets/imgs/OG-AH301_201618_M_20160518112158.gif">
+      <img *ngIf="item.nome == 'Empresa'" src="assets/imgs/marketing-gif.gif">
+      <img *ngIf="item.nome == 'Quintal'" src="assets/imgs/source.gif">
+      <img *ngIf="item.nome == 'Banheiro'" src="assets/imgs/Q_A-with-Cara_contenful.gif">
+
+    </ion-card-content>
+  </ion-card>
+</button>
+
+
 </ion-content>
