@@ -10,29 +10,35 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HomePage {
 
-  credenciais : CredenciaisDTO = {
+  credenciais: CredenciaisDTO = {
     email: "",
     senha: ""
   }
 
-  constructor(public navCtrl: NavController, public menu : MenuController, public auth : AuthService) {
+  constructor(public navCtrl: NavController, public menu: MenuController, public auth: AuthService) {
   }
 
   ionViewWillEnter() {
     this.menu.swipeEnable(false);
-    }
-    ionViewDidLeave() {
+  }
+  ionViewDidLeave() {
     this.menu.swipeEnable(true);
   }
+  ionViewDidEnter() {
+    this.auth.refreshToken().subscribe(response => {
+      this.auth.sucessfullLogin(response.headers.get("Authorization"));
+      this.navCtrl.setRoot('CategoriesPage');
+    },
+      error => { })  }
 
   //Metodo para empilhar as paginas
-  login(){
-  this.auth.authenticate(this.credenciais).subscribe(response => {
-    this.auth.sucessfullLogin(response.headers.get("Authorization"));
-    this.navCtrl.setRoot('CategoriesPage');
-  },
-  error => {})
-}
+  login() {
+    this.auth.authenticate(this.credenciais).subscribe(response => {
+      this.auth.sucessfullLogin(response.headers.get("Authorization"));
+      this.navCtrl.setRoot('CategoriesPage');
+    },
+      error => { })
+  }
 
 
 }

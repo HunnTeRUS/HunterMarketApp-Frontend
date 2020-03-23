@@ -10,6 +10,7 @@
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <ion-icon *ngIf="p.title == 'Profile'" name="logo-snapchat" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon> 
         <ion-icon *ngIf="p.title == 'Categories'" name="logo-buffer" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon> 
+        <ion-icon *ngIf="p.title == 'Logout'" name="log-out" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon> 
       </button>
     </ion-list>
   </ion-content>
