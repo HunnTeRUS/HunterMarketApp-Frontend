@@ -20,54 +20,48 @@
   
   <header>
     
-    <!-- here’s the avatar -->
     <a target="_blank">
       <img src="https://www.dropbox.com/s/9upq789hxnhs361/ava.gif?raw=1">
     </a>
 
-    <!-- the username -->
     <h1>{{cliente?.nome}}</h1>
-    <!-- and role or location -->
     <h2>{{cliente?.email}}</h2>
     
   </header>
   
-  <!-- bit of a bio; who are you? -->
   <div class="profile-bio">
     
     <p>Hello <br><b>{{cliente?.nome}}</b></p>
     
   </div>
   
-  <!-- some social links to show off -->
   <ul class="profile-social-links">
     
-    <!-- twitter - el clásico  -->
     <li>
       <a target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     
-    <!-- envato – use this one to link to your marketplace profile -->
     <li>
       <a target="_blank">
         <i class="fa fa-dribbble"></i>
       </a>
     </li>
-    
-    <!-- codepen - your codepen profile-->
-    <li>
+        <li>
       <a target="_blank">
         <i class="fa fa-codepen"></i>
       </a>
     </li>
-    
-    <!-- add or remove social profiles as you see fit -->
-    
+        
   </ul>
   
 </aside>
-<!-- that’s all folks! -->
+<!-- 
+<Br>
+  <br>
+  <ion-avatar>
+    <img class="circle" [src]="cliente?.imageUrl || 'assets/imgs/padrao.png'">
+  </ion-avatar> -->
 
 </ion-content>

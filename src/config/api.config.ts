@@ -1,4 +1,5 @@
 export const API_CONFIG = {
     baseUrl: "http://localhost:8080",
-    bucketBaseUrl: "https://s3.console.aws.amazon.com/s3/buckets/hunterstorage/AnimatedImages"
+    bucketBaseUrl: "https://hunterstorage.s3-sa-east-1.amazonaws.com",
+    bucketBaseUrlAnimatedImages: "https://hunterstorage.s3-sa-east-1.amazonaws.com/AnimatedImages/",
 }

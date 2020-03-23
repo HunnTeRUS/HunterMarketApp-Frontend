@@ -31,7 +31,7 @@ export class ProfilePage {
     if(localUser && localUser.email)
       this.clienteService.findByEmail(localUser.email).subscribe(response => {
         this.cliente = response;
-        // this.getImageIfExists();
+        this.getImageIfExists();
       }, error => {});
       
   }
@@ -40,7 +40,8 @@ export class ProfilePage {
      this.clienteService.getImageFromBucket(this.cliente.id)
      .subscribe(response => {
        this.cliente.imageUrl = API_CONFIG.bucketBaseUrl + "/cp" + this.cliente.id + ".jpg";
-     })
+     },
+     error => {});
    }
 
 }
