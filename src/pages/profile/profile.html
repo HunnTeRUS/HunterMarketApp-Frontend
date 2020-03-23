@@ -8,5 +8,61 @@
 </ion-header>
 
 <ion-content padding>
-{{ email }}
+<!-- this is the markup. you can change the details (your own name, your own avatar etc.) but don’t change the basic structure! -->
+
+<aside class="profile-card">
+  
+  <header>
+    
+    <!-- here’s the avatar -->
+    <a target="_blank" href="https://twitter.com/xxdionxx">
+      <img src="https://www.dropbox.com/s/9upq789hxnhs361/ava.gif?raw=1">
+    </a>
+
+    <!-- the username -->
+    <h1>{{cliente?.nome}}</h1>
+    <!-- and role or location -->
+    <h2>{{cliente?.email}}</h2>
+    
+  </header>
+  
+  <!-- bit of a bio; who are you? -->
+  <div class="profile-bio">
+    
+    <p>I’m half unicorn and half biscuits. I design <b>ui + ux</b>, i code the <b>frontend</b>, and i love
+<b>motion design</b></p>
+    
+  </div>
+  
+  <!-- some social links to show off -->
+  <ul class="profile-social-links">
+    
+    <!-- twitter - el clásico  -->
+    <li>
+      <a target="_blank" href="https://twitter.com/xxdionxx">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    
+    <!-- envato – use this one to link to your marketplace profile -->
+    <li>
+      <a target="_blank" href="https://dribbble.com/xdionx">
+        <i class="fa fa-dribbble"></i>
+      </a>
+    </li>
+    
+    <!-- codepen - your codepen profile-->
+    <li>
+      <a target="_blank" href="https://codepen.io/xdionx/">
+        <i class="fa fa-codepen"></i>
+      </a>
+    </li>
+    
+    <!-- add or remove social profiles as you see fit -->
+    
+  </ul>
+  
+</aside>
+<!-- that’s all folks! -->
+
 </ion-content>
