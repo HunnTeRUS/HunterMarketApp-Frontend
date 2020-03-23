@@ -83,7 +83,7 @@ page-profile {
   $green: #29d08a; 
   $white: #fff;
   $black: #000;
-  $silver: #e6eef1;
+  $silver: #d1d7d8;
   $slate: #4e5b6b;
   
   .content {
@@ -118,9 +118,9 @@ page-profile {
               // visibility: visible;
           }
           header {
-              padding-top: 106px;
+              padding-top: 120px;
               h1 {
-                  top: 332px;
+                  top: 317px;
               }
               h2 {
                   top: 390px;
@@ -250,6 +250,7 @@ page-profile {
               top: -55px;
               opacity: 1;
               visibility: visible;
+              margin-left: 15%;
           }
       }
   }
