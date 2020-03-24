@@ -31,13 +31,16 @@ export class HomePage {
     },
       error => { })  }
 
-  //Metodo para empilhar as paginas
   login() {
     this.auth.authenticate(this.credenciais).subscribe(response => {
       this.auth.sucessfullLogin(response.headers.get("Authorization"));
       this.navCtrl.setRoot('CategoriesPage');
     },
       error => { })
+  }
+
+  signup(){
+    this.navCtrl.push('SignupPage');
   }
 
 
