@@ -24,7 +24,7 @@
     </button>
   </ion-list> -->
 
-<button ion-item *ngFor="let item of items">  
+<button ion-item *ngFor="let item of items" (click)="showProdutos(item.id)">  
   <ion-card class="cardItems">
     <ion-card-header>
       <h2>{{ item.nome }}</h2>
