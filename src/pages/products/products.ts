@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProdutoDTO } from '../../models/produto.dto';
 import { ProdutoService } from '../../services/domain/produto.service';
 import { API_CONFIG } from '../../config/api.config';
+import { ProductDetailPage } from '../product-detail/product-detail';
 
 /**
  * Generated class for the ProductsPage page.
@@ -20,7 +21,10 @@ export class ProductsPage {
 
   items: ProdutoDTO[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public produtoService: ProdutoService) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public produtoService: ProdutoService) {
   }
 
   ionViewDidLoad() {
@@ -40,6 +44,10 @@ export class ProductsPage {
       }, error => {})
 
     }
+  }
+
+  showDetail(){
+    this.navCtrl.push('ProductDetailPage');
   }
 
 }
