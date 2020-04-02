@@ -11,8 +11,10 @@
     </ion-list-header>
     <button ion-item *ngFor="let item of items" class="itens">
       <h2>{{item.logradouro}}, {{item.numero}}</h2>
-      <p>{{item.complemento}} {{item.bairro}} CEP {{item.cep}}</p>
-      <p>{{item.cidade.nome}}, {{item.cidade.estado.nome}}</p>
+      <p>{{item.complemento}} {{item.bairro}}, CEP - {{item.cep}}</p>
+      <br>
+      <p>City - {{item.cidade.nome}}</p>
+      <p>State -  {{item.cidade.estado.nome}}</p>
     </button>
   </ion-list>
 </ion-content>
