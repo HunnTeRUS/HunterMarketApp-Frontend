@@ -6,7 +6,6 @@ import { EstadoService } from '../../services/domain/estado.service';
 import { EstadoDTO } from '../../models/estado.dto';
 import { CidadeDTO } from '../../models/cidade.dto';
 import { ClienteService } from '../../services/domain/cliente.service';
-import { ClienteDTO } from '../../models/cliente.dto';
 
 
 @IonicPage()

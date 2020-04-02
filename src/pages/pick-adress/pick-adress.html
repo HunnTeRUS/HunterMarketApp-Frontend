@@ -9,7 +9,7 @@
     <ion-list-header text-center>
       Pickup one adress
     </ion-list-header>
-    <button ion-item *ngFor="let item of items" class="itens">
+    <button ion-item *ngFor="let item of items" class="itens" (click)="nextPage(item)">
       <h2>{{item.logradouro}}, {{item.numero}}</h2>
       <p>{{item.complemento}} {{item.bairro}}, CEP - {{item.cep}}</p>
       <br>

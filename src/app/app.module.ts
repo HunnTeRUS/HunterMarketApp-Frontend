@@ -14,7 +14,6 @@ import { StorageService } from '../services/storage.service';
 import { ClienteService } from '../services/domain/cliente.service';
 import { AuthInterceptorProvider } from '../interceptors/auth.interceptor';
 import { ProdutoService } from '../services/domain/produto.service';
-import { ProductDetailPageModule } from '../pages/product-detail/product-detail.module';
 import { ProductDetailPage } from '../pages/product-detail/product-detail';
 import { CartService } from '../services/domain/cart.service';
 
