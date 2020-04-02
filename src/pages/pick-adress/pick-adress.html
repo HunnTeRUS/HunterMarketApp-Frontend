@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Finishing Request</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header text-center>
+      Pickup one adress
+    </ion-list-header>
+    <button ion-item *ngFor="let item of items" class="itens">
+      <h2>{{item.logradouro}}, {{item.numero}}</h2>
+      <p>{{item.complemento}} {{item.bairro}} CEP {{item.cep}}</p>
+      <p>{{item.cidade.nome}}, {{item.cidade.estado.nome}}</p>
+    </button>
+  </ion-list>
+</ion-content>
