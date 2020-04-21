@@ -16,6 +16,13 @@ export class ClienteService {
 
         return this.http.get(API_CONFIG.baseUrl + '/clientes/email?value=' + email, {'headers':authHeader});
     } 
+
+    findById(id : string){
+        let token = this.storage.getLocalUser().token;
+        let authHeader = new HttpHeaders({'Authorization':'Bearer ' + token});    
+
+        return this.http.get(API_CONFIG.baseUrl + '/clientes/' + id, {'headers':authHeader});
+    } 
     
     getImageFromBucket(id : string) : Observable<any> {
         let url = API_CONFIG.bucketBaseUrl + '/cp' + id + '.jpg';
