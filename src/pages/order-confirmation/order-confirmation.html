@@ -67,10 +67,10 @@
       <ion-item *ngIf="pedido.pagamento['@type']=='pagamentoComBoleto'">
         <h3>Pagamento com boleto</h3>
       </ion-item>
-    </ion-card>
+    </ion-card> 
 
-    <button ion-button block >Confirmar pedido</button>
-    <button ion-button block >Voltar</button>
+    <button ion-button block (click)="checkout()" >Confirmar pedido</button>
+    <button ion-button block outline (click)="back()">Voltar</button>
   <!-- </div> -->
 
 </ion-content>
