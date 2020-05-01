@@ -6,15 +6,28 @@
   </ion-header>
 
   <ion-content>
-    <ion-list>
+    <canvas></canvas>
+    <div id="Profile">
+      <img [src]="cliente?.imageUrl || 'assets/imgs/padrao.png'"/>
+      <span>{{cliente?.nome}}</span>
+    </div>
+    <ion-list style="padding-top: 43%;">     
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        <ion-icon *ngIf="p.title == 'Profile'" name="logo-snapchat" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon> 
-        <ion-icon *ngIf="p.title == 'Categories'" name="md-list" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon> 
-        <ion-icon *ngIf="p.title == 'My Cart'" name="md-cart" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon> 
-        <ion-icon *ngIf="p.title == 'Logout'" name="log-out" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon> 
+        <ion-icon *ngIf="p.title == 'Profile'" class="fa fa-font" name="logo-snapchat" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon> 
+        <ion-icon *ngIf="p.title == 'Categories'" class="fa fa-font" name="md-list" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon> 
+        <ion-icon *ngIf="p.title == 'My Cart'" class="fa fa-font" name="md-cart" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon>
+        <ion-icon *ngIf="p.title == 'Change Picture'" class="fa fa-font" name="md-reverse-camera" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon> 
+        <ion-icon style="padding-top: 100%; color: red; border-color: red;" *ngIf="p.title == 'Logout'" class="fa fa-font" name="log-out" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon> 
       </button>
     </ion-list>
+    <img *ngIf="picture" [src]="picture"/>
+        <button ion-button block (click)="getCameraPicture()" [disabled]="cameraOn">Camera</button>
+        <button ion-button block (click)="sendPicture()" *ngIf="picture">Send Image</button>
+        <button ion-button block (click)="cancel()" *ngIf="picture">Cancel</button>
+
   </ion-content>
+
+
 
 </ion-menu>
 

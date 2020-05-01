@@ -25,8 +25,13 @@
     </a>
 
     <h1>{{cliente?.nome}}</h1>
-    <h2>{{cliente?.email}}</h2>
-    
+    <h2>{{cliente?.email}}
+    <br><br>
+    <p style="text-align:left; margin-left: 20px;"><strong style="color:#d1d7d8;">CPF/CNPJ:</strong> {{cliente?.cpfOuCnpj}}</p>
+    <p style="text-align:left; margin-left: 20px;"><strong style="color:#d1d7d8;">Celular:</strong> {{cliente?.telefones[0]}}</p>
+    <p style="text-align:left; margin-left: 20px;"><strong style="color:#d1d7d8;">Endereço:</strong> {{cliente?.enderecos[0].logradouro}}, {{cliente?.enderecos[0].numero}} - {{cliente?.enderecos[0].cidade.nome}}</p>
+    </h2>
+
   </header>
   
   <div class="profile-bio">
@@ -56,7 +61,7 @@
         
   </ul>
   
-  <canvas></canvas>
+  <!-- <canvas></canvas>
 
 <div id="Profile">
   <img [src]="cliente?.imageUrl || 'assets/imgs/padrao.png'"/>
@@ -66,7 +71,9 @@
   <h4>CPF/CNPJ:</h4> {{cliente?.cpfOuCnpj}}
   <h4>Endereço Principal:</h4> {{cliente?.enderecos[0].logradouro}}, {{cliente?.enderecos[0].numero}} - {{cliente?.enderecos[0].cidade.nome}} 
   <h4>Telefone/Celular:</h4> {{cliente?.telefones[0]}}
-</div>
+  <br>
+  <br>
+</div> -->
 
 </aside>
 <!-- 

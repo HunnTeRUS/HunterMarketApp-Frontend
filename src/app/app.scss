@@ -1,16 +1,57 @@
-// http://ionicframework.com/docs/theming/
+@import url(https://fonts.googleapis.com/css?family=Oswald:300);
+@import url(https://fonts.googleapis.com/css?family=Abel);
 
+#Profile {
+    position: absolute;
+    margin: auto;
+    top: 5%;
+    right: 26%;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+}
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+#Profile:before {
+  content: '';
+  position: absolute;
+  top: -8px; left: -8px;
+  width: 162px; height: 162px;
+  border-radius: 162px;
+  border: 2px solid #BCBCBC;
+}
+
+#Profile:after {
+  content: '';
+  position: absolute;
+  top: -13px; left: -13px;
+  width: 172px; height: 172px;
+  border-radius: 172px;
+  border: 2px solid #FF9900;
+}
+
+#Profile img {
+  border-radius: 150px;
+}
+
+#Profile span {
+  position: absolute;
+  bottom: -60px;
+  display: block;
+  width: 150px;
+  text-align: center;
+  font-family: 'Oswald';
+  color: #333;
+  font-size: 25px;
+}
+
+#Profile a {
+  position: absolute;
+  right: 0; top: 0; left: 0;
+  text-align: center;
+  font-family: 'Abel';
+  background: #7ECEFD;
+  padding: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
