@@ -56,6 +56,18 @@
         
   </ul>
   
+  <canvas></canvas>
+
+<div id="Profile">
+  <img [src]="cliente?.imageUrl || 'assets/imgs/padrao.png'"/>
+</div>
+
+<div class="info">
+  <h4>CPF/CNPJ:</h4> {{cliente?.cpfOuCnpj}}
+  <h4>Endereço Principal:</h4> {{cliente?.enderecos[0].logradouro}}, {{cliente?.enderecos[0].numero}} - {{cliente?.enderecos[0].cidade.nome}} 
+  <h4>Telefone/Celular:</h4> {{cliente?.telefones[0]}}
+</div>
+
 </aside>
 <!-- 
 <Br>
@@ -63,5 +75,6 @@
   <ion-avatar>
     <img class="circle" [src]="cliente?.imageUrl || 'assets/imgs/padrao.png'">
   </ion-avatar> -->
+<br/>
 
 </ion-content>
