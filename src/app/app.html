@@ -11,19 +11,21 @@
       <img [src]="cliente?.imageUrl || 'assets/imgs/padrao.png'"/>
       <span>{{cliente?.nome}}</span>
     </div>
-    <ion-list style="padding-top: 43%;">     
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        <ion-icon *ngIf="p.title == 'Profile'" class="fa fa-font" name="logo-snapchat" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon> 
-        <ion-icon *ngIf="p.title == 'Categories'" class="fa fa-font" name="md-list" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon> 
-        <ion-icon *ngIf="p.title == 'My Cart'" class="fa fa-font" name="md-cart" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon>
-        <ion-icon *ngIf="p.title == 'Change Picture'" class="fa fa-font" name="md-reverse-camera" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon> 
-        <ion-icon style="padding-top: 100%; color: red; border-color: red;" *ngIf="p.title == 'Logout'" class="fa fa-font" name="log-out" width="150px"><span>&nbsp;&nbsp;</span>{{p.title}}</ion-icon> 
-      </button>
+    <ion-list style="margin-top: 43%;">     
+      <!-- <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)"> -->
+        <ion-icon menuClose ion-item (click)="openPage(pages[0])" class="fa fa-font" name="logo-snapchat" width="150px"><span>&nbsp;&nbsp;{{pages[0].title}}</span></ion-icon> 
+        <ion-icon menuClose ion-item (click)="openPage(pages[1])" class="fa fa-font" name="md-list" width="150px"><span>&nbsp;&nbsp;{{pages[1].title}}</span></ion-icon> 
+        <ion-icon menuClose ion-item (click)="openPage(pages[2])" class="fa fa-font" name="md-cart" width="150px"><span>&nbsp;&nbsp;{{pages[2].title}}</span></ion-icon>
+        <ion-icon menuClose ion-item (click)="openPage(pages[3])" class="fa fa-font" name="md-reverse-camera" width="150px"><span>&nbsp;&nbsp;{{pages[3].title}}</span></ion-icon> 
+      <!-- </button> -->
+      
+      <ion-footer>
+        <ion-toolbar>
+          <ion-icon style="color: red;" menuClose ion-item (click)="openPage(pages[4])" class="fa fa-font" name="md-exit" width="150px"><span>&nbsp;&nbsp;{{pages[4].title}}</span></ion-icon>
+        </ion-toolbar>
+      </ion-footer>
+
     </ion-list>
-    <img *ngIf="picture" [src]="picture"/>
-        <button ion-button block (click)="getCameraPicture()" [disabled]="cameraOn">Camera</button>
-        <button ion-button block (click)="sendPicture()" *ngIf="picture">Send Image</button>
-        <button ion-button block (click)="cancel()" *ngIf="picture">Cancel</button>
 
   </ion-content>
 

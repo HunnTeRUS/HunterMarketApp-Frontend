@@ -38,7 +38,9 @@ export class HomePage {
       loader.dismiss();
       this.navCtrl.setRoot('CategoriesPage');
     },
-      error => { })
+      error => {
+        loader.dismiss();
+       })
   }
 
   signup(){

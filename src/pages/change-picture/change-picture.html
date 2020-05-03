@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Change Picture</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div id="Profile">
+      <img [src]="cliente?.imageUrl || 'assets/imgs/padrao.png'"/>
+  </div>
+  <br/>
+  <div id="Profile">
+    <img *ngIf="picture" [src]="picture"/>
+  </div>
+
+  <ion-footer>
+    <ion-toolbar>
+    <button ion-button block (click)="getCameraPicture()" [disabled]="cameraOn">Camera</button>
+    <button ion-button block primary (click)="sendPicture()" *ngIf="picture">Send Image</button>
+    <button ion-button block style="background-color: red;"(click)="cancel()" *ngIf="picture">Cancel</button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

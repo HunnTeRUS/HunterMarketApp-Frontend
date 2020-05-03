@@ -39,11 +39,11 @@ export class MyApp {
       { title: 'Profile', component: 'ProfilePage' },
       { title: 'Categories', component: 'CategoriesPage' },
       { title: 'My Cart', component: 'CartPage' },
-      { title: 'Change Picture', component: '' },
+      { title: 'Change Picture', component: 'ChangePicturePage' },
       { title: 'Logout', component: '' }
     ];
 
-    this.initializeApp();
+    this.initializeCliente();
   }  
 
   initializeCliente(){
@@ -84,36 +84,5 @@ export class MyApp {
       this.cliente.imageUrl = API_CONFIG.bucketBaseUrl + "/cp" + this.cliente.id + ".jpg";
     },
     error => {});
-  }
-
-
-  getCameraPicture(){
-    this.cameraOn = true;
-   const options: CameraOptions = {
-     quality: 100,
-     destinationType: this.camera.DestinationType.DATA_URL,
-     encodingType: this.camera.EncodingType.PNG,
-     mediaType: this.camera.MediaType.PICTURE
-   }
-   
-   this.camera.getPicture(options).then((imageData) => {
-    // imageData is either a base64 encoded string or a file URI
-    // If it's base64 (DATA_URL):
-    this.picture = 'data:image/png;base64,' + imageData;
-    this.cameraOn = false;
-   }, (err) => {
-    // Handle error
-   });
-  }
-
-  sendPicture(){
-    this.profile.uploadPicture(this.picture).subscribe(response => {
-      this.picture = null;
-      this.initializeApp();
-    }, error=>{})
-  }
-
-  cancel(){
-    this.picture = null;
   }
 }

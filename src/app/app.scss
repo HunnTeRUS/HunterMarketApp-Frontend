@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:300);
 @import url(https://fonts.googleapis.com/css?family=Abel);
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,700&display=swap');
 #Profile {
     position: absolute;
     margin: auto;
@@ -54,4 +54,8 @@
   color: #fff;
   text-decoration: none;
   font-size: 20px;
+}
+
+ion-list span{
+  font-family: 'Roboto', sans-serif;
 }
