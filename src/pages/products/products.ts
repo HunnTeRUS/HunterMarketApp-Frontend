@@ -3,14 +3,6 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
 import { ProdutoDTO } from '../../models/produto.dto';
 import { ProdutoService } from '../../services/domain/produto.service';
 import { API_CONFIG } from '../../config/api.config';
-import { ProductDetailPage } from '../product-detail/product-detail';
-
-/**
- * Generated class for the ProductsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({

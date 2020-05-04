@@ -4,11 +4,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthService } from '../services/auth.service';
 import { ClienteDTO } from '../models/cliente.dto';
-import { ProfilePage } from '../pages/profile/profile';
 import { ClienteService } from '../services/domain/cliente.service';
 import { StorageService } from '../services/storage.service';
 import { API_CONFIG } from '../config/api.config';
-import { CameraOptions, Camera } from '@ionic-native/camera/ngx';
 
 @Component({
   templateUrl: 'app.html'
@@ -30,9 +28,10 @@ export class MyApp {
     public splashScreen: SplashScreen, 
     public authService : AuthService, 
     public profile: ClienteService,
-    public storage : StorageService,
-    public camera: Camera) {
+    public storage : StorageService) {
     this.initializeApp();
+
+    this.initializeCliente();
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -43,7 +42,6 @@ export class MyApp {
       { title: 'Logout', component: '' }
     ];
 
-    this.initializeCliente();
   }  
 
   initializeCliente(){

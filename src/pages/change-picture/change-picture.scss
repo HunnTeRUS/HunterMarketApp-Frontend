@@ -1,3 +1,121 @@
 page-change-picture {
+    @import url(https://fonts.googleapis.com/css?family=Oswald:300);
+    @import url(https://fonts.googleapis.com/css?family=Abel);
+    
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #E9E9E9;
+    }
+    
+    #Profile {
+      position: absolute;
+      margin: auto;
+      top: -65%; right: 0; bottom: 0; left: 0;
+      width: 150px; height: 150px;
+      border-radius: 150px;
+    }
+    
+    #Profile:before {
+      content: '';
+      position: absolute;
+      top: -8px; left: -8px;
+      width: 162px; height: 162px;
+      border-radius: 162px;
+      border: 2px solid #BCBCBC;
+    }
+    
+    #Profile:after {
+      content: '';
+      position: absolute;
+      top: -13px; left: -13px;
+      width: 172px; height: 172px;
+      border-radius: 172px;
+      border: 2px solid #FF9900;
+    }
+    
+    #Profile img {
+      border-radius: 150px;
+    }
+    
+    #Profile span {
+      position: absolute;
+      bottom: -60px;
+      display: block;
+      width: 150px;
+      text-align: center;
+      font-family: 'Oswald';
+      color: #333;
+      font-size: 25px;
+    }
+    
+    #Profile a {
+      position: absolute;
+      right: 0; top: 0; left: 0;
+      text-align: center;
+      font-family: 'Abel';
+      background: #7ECEFD;
+      padding: 6px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+    }
 
+    #Profile2 {
+        position: absolute;
+        margin: auto;
+        top: 15%; right: 0; bottom: 0; left: 0;
+        width: 150px; height: 150px;
+        border-radius: 150px;
+      }
+      
+      #Profile2:before {
+        content: '';
+        position: absolute;
+        top: -8px; left: -8px;
+        width: 162px;
+        height: 125px;
+        border: 2px solid #BCBCBC;
+      }
+      
+      #Profile2:after {
+        content: '';
+        position: absolute;
+        top: -13px; left: -13px;
+        width: 172px;
+        height: 137px;
+        border: 2px solid #FF9900;
+      }
+      
+      #Profile2 span {
+        position: absolute;
+        bottom: -30px;
+        display: block;
+        width: 150px;
+        text-align: center;
+        font-family: 'Oswald';
+        color: #333;
+        font-size: 25px;
+      }
+    
+      #Profile2 a {
+        position: absolute;
+        right: 0; top: 0; left: 0;
+        text-align: center;
+        font-family: 'Abel';
+        background: #7ECEFD;
+        padding: 6px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+      }
+
+      .cordova-camera-capture{
+        position: relative !important;
+        width: 100% !important;
+    }
+
+    .cordova-camera-capture video{
+        width: 100% !important;
+    }
 }

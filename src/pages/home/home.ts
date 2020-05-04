@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, IonicPage, MenuController, LoadingController } from 'ionic-angular';
 import { CredenciaisDTO } from '../../models/credenciais.dto';
 import { AuthService } from '../../services/auth.service';
+import { MyApp } from '../../app/app.component';
 
 @IonicPage()
 @Component({
@@ -15,7 +16,7 @@ export class HomePage {
     senha: ""
   }
 
-  constructor(public navCtrl: NavController, public menu: MenuController, public auth: AuthService, public loadingController: LoadingController) {
+  constructor(public navCtrl: NavController, public menu: MenuController, public auth: AuthService, public loadingController: LoadingController, public myapp: MyApp) {
   }
 
   ionViewWillEnter() {
@@ -37,6 +38,7 @@ export class HomePage {
       this.auth.sucessfullLogin(response.headers.get("Authorization"));
       loader.dismiss();
       this.navCtrl.setRoot('CategoriesPage');
+      this.myapp.initializeCliente();
     },
       error => {
         loader.dismiss();

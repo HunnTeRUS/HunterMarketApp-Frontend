@@ -10,10 +10,12 @@
 <ion-content padding>
   <div id="Profile">
       <img [src]="cliente?.imageUrl || 'assets/imgs/padrao.png'"/>
+      <span>Foto Atual</span>
   </div>
   <br/>
-  <div id="Profile">
-    <img *ngIf="picture" [src]="picture"/>
+  <div id="Profile2" *ngIf="picture">
+    <img [src]="picture"/>
+    <span>Nova foto</span>
   </div>
 
   <ion-footer>

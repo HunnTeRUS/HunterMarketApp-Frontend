@@ -4,5 +4,6 @@
     "capacitor": {},
     "cordova": {}
   },
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "app_id": ""
 }

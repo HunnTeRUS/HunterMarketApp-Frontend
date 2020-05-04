@@ -4,7 +4,6 @@ import { StorageService } from '../../services/storage.service';
 import { ClienteDTO } from '../../models/cliente.dto';
 import { ClienteService } from '../../services/domain/cliente.service';
 import { API_CONFIG } from '../../config/api.config';
-import { CameraOptions, Camera } from '@ionic-native/camera/ngx';
 
 
 /**
@@ -27,8 +26,7 @@ export class ProfilePage {
     public navCtrl: NavController, 
     public navParams: NavParams, 
     public storage : StorageService,
-     public clienteService : ClienteService,
-     public camera: Camera) {
+     public clienteService : ClienteService) {
   }
 
   ionViewDidLoad() {

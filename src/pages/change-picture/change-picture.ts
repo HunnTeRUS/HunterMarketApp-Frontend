@@ -3,8 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ClienteDTO } from '../../models/cliente.dto';
 import { StorageService } from '../../services/storage.service';
 import { ClienteService } from '../../services/domain/cliente.service';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { API_CONFIG } from '../../config/api.config';
+import { Camera, CameraOptions } from '@ionic-native/camera'
+import { MyApp } from '../../app/app.component';
 
 @IonicPage()
 @Component({
@@ -22,7 +23,8 @@ export class ChangePicturePage {
     public navParams: NavParams,
     public profile: ClienteService,
     public storage : StorageService,
-    public camera: Camera) {
+    public camera: Camera,
+    public myapp: MyApp) {
   }
 
   ionViewDidLoad() {
@@ -51,24 +53,25 @@ export class ChangePicturePage {
 
   getCameraPicture(){
     this.cameraOn = true;
-   const options: CameraOptions = {
-     quality: 100,
-     destinationType: this.camera.DestinationType.DATA_URL,
-     encodingType: this.camera.EncodingType.PNG,
-     mediaType: this.camera.MediaType.PICTURE
+     const options: CameraOptions = {
+        quality: 100,
+        destinationType: this.camera.DestinationType.DATA_URL,
+        encodingType: this.camera.EncodingType.PNG,
+        mediaType: this.camera.MediaType.PICTURE
    }
    
-   this.camera.getPicture(options).then((imageData) => {
-    this.picture = 'data:image/png;base64,' + imageData;
-    this.cameraOn = false;
-   }, (err) => {
-   });
+    this.camera.getPicture(options).then((imageData) => {
+      this.picture = 'data:image/png;base64,' + imageData;
+      this.cameraOn = false;
+    }, (err) => {
+    });
   }
 
   sendPicture(){
     this.profile.uploadPicture(this.picture).subscribe(response => {
       this.picture = null;
       this.initializeUser();
+      this.myapp.initializeCliente();
     }, error=>{})
   }
 

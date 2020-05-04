@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule, NavController } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 
@@ -16,8 +16,7 @@ import { AuthInterceptorProvider } from '../interceptors/auth.interceptor';
 import { ProdutoService } from '../services/domain/produto.service';
 import { ProductDetailPage } from '../pages/product-detail/product-detail';
 import { CartService } from '../services/domain/cart.service';
-import { ProfilePage } from '../pages/profile/profile';
-import { Camera } from '@ionic-native/camera/ngx';
+import { Camera } from '@ionic-native/camera';
 import { ImageUtilService } from '../services/image-util.service';
 
 @NgModule({
