@@ -6,6 +6,7 @@ import { LocalUser } from "../models/localUser";
 import { StorageService } from "./storage.service";
 import { JwtHelper } from 'angular2-jwt';
 import { CartService } from "./domain/cart.service";
+import { EmailDTO } from "../models/email.dto";
 
 
 @Injectable()
@@ -49,6 +50,16 @@ export class AuthService{
         return this.http.post( 
             API_CONFIG.baseUrl + "/auth/refresh_token", 
             {},
+            {
+                observe : 'response',
+                responseType: 'text'
+            } );
+    }
+
+    forgotPassword(email : EmailDTO){
+        return this.http.post( 
+            API_CONFIG.baseUrl + "/auth/forgot", 
+            email,
             {
                 observe : 'response',
                 responseType: 'text'

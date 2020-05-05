@@ -49,6 +49,10 @@ export class HomePage {
     this.navCtrl.push('SignupPage');
   }
 
+  forgotPassword(){
+    this.navCtrl.push('ForgotPasswordPage');
+  };
+
   presentLoading(){
     let loader = this.loadingController.create({
       content: "Please wait..."
