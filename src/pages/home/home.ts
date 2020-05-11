@@ -25,6 +25,7 @@ export class HomePage {
   ionViewDidLeave() {
     this.menu.swipeEnable(true);
   }
+
   ionViewDidEnter() {
     this.auth.refreshToken().subscribe(response => {
       this.auth.sucessfullLogin(response.headers.get("Authorization"));
@@ -55,7 +56,7 @@ export class HomePage {
 
   presentLoading(){
     let loader = this.loadingController.create({
-      content: "Please wait..."
+      content: "Aguarde..."
     });
     loader.present();
     return loader;

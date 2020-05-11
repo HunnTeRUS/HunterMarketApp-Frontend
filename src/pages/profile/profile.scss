@@ -1,7 +1,6 @@
 page-profile {
   @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
-  @import url(https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css);
-  
+    
   // mixin
   @mixin keyframes($animation-name) {
     @-webkit-keyframes #{$animation-name} {

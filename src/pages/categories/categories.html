@@ -3,11 +3,11 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Categories</ion-title>
+    <ion-title>Categorias</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content >
+<ion-content class="content">
   <ion-fab top right edge>
     <button navPush="CartPage" ion-fab mini>
     <ion-icon name="cart"></ion-icon></button>
@@ -24,19 +24,20 @@
   </ion-list> -->
 
 <button ion-item *ngFor="let item of items" (click)="showProdutos(item.id)">  
-  <ion-card class="cardItems">
+  <ion-card class="cardItems" style="border-radius: 16px; background-color: #dedede;">
     <ion-card-header>
       <h2>{{ item.nome }}</h2>
     </ion-card-header>
     <ion-card-content>
-      <img *ngIf="item.nome == 'Informatica'" src="assets/imgs/apple-pay-1582892364.gif">
-      <img *ngIf="item.nome == 'Escritorio'" src="assets/imgs/cover-21-tips-for-building-the-perfect-home-office-1584704111.gif">
-      <img *ngIf="item.nome == 'Gamer'" src="assets/imgs/giphycopy.gif">
-      <img *ngIf="item.nome == 'Cozinha'" src="assets/imgs/Food-waste-Tip1-Plan-before-you-buy.gif">
-      <img *ngIf="item.nome == 'Cama/Mesa/Banho'" src="assets/imgs/OG-AH301_201618_M_20160518112158.gif">
-      <img *ngIf="item.nome == 'Empresa'" src="assets/imgs/marketing-gif.gif">
-      <img *ngIf="item.nome == 'Quintal'" src="assets/imgs/source.gif">
-      <img *ngIf="item.nome == 'Banheiro'" src="assets/imgs/Q_A-with-Cara_contenful.gif">
+      
+      <img style="border-radius: 16px;" *ngIf="item.nome == 'Informatica'" src="assets/imgs/apple-pay-1582892364.gif">
+      <img style="border-radius: 16px;" *ngIf="item.nome == 'Escritorio'" src="assets/imgs/cover-21-tips-for-building-the-perfect-home-office-1584704111.gif">
+      <img style="border-radius: 16px;" *ngIf="item.nome == 'Gamer'" src="assets/imgs/giphycopy.gif">
+      <img style="border-radius: 16px;" *ngIf="item.nome == 'Cozinha'" src="assets/imgs/Food-waste-Tip1-Plan-before-you-buy.gif">
+      <img style="border-radius: 16px;" *ngIf="item.nome == 'Cama/Mesa/Banho'" src="assets/imgs/OG-AH301_201618_M_20160518112158.gif">
+      <img style="border-radius: 16px;" *ngIf="item.nome == 'Empresa'" src="assets/imgs/marketing-gif.gif">
+      <img style="border-radius: 16px;" *ngIf="item.nome == 'Quintal'" src="assets/imgs/source.gif">
+      <img style="border-radius: 16px;" *ngIf="item.nome == 'Banheiro'" src="assets/imgs/Q_A-with-Cara_contenful.gif">
 
     </ion-card-content>
   </ion-card>

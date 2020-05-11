@@ -13,6 +13,7 @@ import { CartService } from '../../services/domain/cart.service';
 export class ProductDetailPage {
 
   item: ProdutoDTO;
+  
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -30,12 +31,10 @@ export class ProductDetailPage {
   }
 
   getImageUrlIfExists(){
-    this.produtoService.getImageFromBucket(this.item.id)
-    .subscribe(response => {
-      this.item.imageUrl = API_CONFIG.bucketBaseUrl + '/prod' + this.item.id + '.jpg';
-    }, error => {
-      
-    })
+    this.produtoService.getImageFromBucket(this.item.imageId)
+      .subscribe(response => {
+        this.item.imageUrl = API_CONFIG.bucketBaseUrl + '/prod' + this.item.imageId + '.jpg';
+      }, error => {})
   }
 
   addToCart(produto : ProdutoDTO) {

@@ -18,6 +18,8 @@ export class SignupPage {
   formGroup: FormGroup;
   estados: EstadoDTO[];
   cidades: CidadeDTO[];
+  isTextFieldType: boolean;
+  myColor: string = 'dark';
 
   constructor(
     public navCtrl: NavController,
@@ -60,6 +62,16 @@ export class SignupPage {
     }, error => {
 
     })
+  }
+
+
+
+toggleColor() {
+    this.myColor = 'danger';
+}
+
+  togglePasswordFieldType(){
+    this.isTextFieldType = !this.isTextFieldType;
   }
 
   updateCidades() {

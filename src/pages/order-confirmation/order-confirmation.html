@@ -69,14 +69,14 @@
         <h3>Pagamento com boleto</h3>
       </ion-item>
     </ion-card>
-    <button ion-button block (click)="checkout()">Confirm order</button>
-    <button ion-button block outline (click)="back()">Back</button>
+    <button ion-button block (click)="checkout()">Confirmar Pedido</button>
+    <button ion-button block outline (click)="back()">Voltar</button>
   </div>
 
   <div *ngIf="codPedido">
     <ion-card>
       <ion-card-header text-center>
-        Seu pedido foi registrado ciom.
+        Seu pedido foi registrado!.
       </ion-card-header>
       <ion-item>
         <h2>Código do pedido: {{codPedido}}</h2>
@@ -84,7 +84,7 @@
       </ion-item>
     </ion-card>
 
-    <button ion-button block outline (click)="home()">Back</button>
+    <button ion-button block outline (click)="home()">Voltar</button>
   </div>
 
 </ion-content>

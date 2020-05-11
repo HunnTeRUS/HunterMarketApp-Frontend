@@ -1,3 +1,185 @@
-page-product-detail {
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
+page-product-detail {
+    label{
+        font-family: "Poppins", sans-serif;
+    }
+
+    .button2{
+        width: 100%;
+        height: 60px;
+        border: 1px solid;
+        border-radius: 8px;
+        margin-top: 16px;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        transition: filter 0.2s;
+        font-size: 14px;
+        background-color: white;
+        color: grey;
+        border-color: grey;
+        margin-bottom: 10%;
+    }
+
+    ion-card{
+                }
+
+    img{
+        padding: 6%;
+    }
+
+    .finish{
+        height: 45px;
+        width: 65%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 15%;  
+        color: white;
+        background-color: #1bbc9d;
+        margin-bottom: 10%;
+        border: none;
+      }
+
+
+
+      label{
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pricing-container {
+          width: 90%;
+          max-width: 1170px;
+          margin: 4em auto;
+      }
+      
+      .pricing-container {
+          margin: 6em auto;
+      }
+      .pricing-container.full-width {
+          width: 100%;
+          max-width: none;
+      }
+      
+      .pricing-switcher {
+          text-align: center;
+      }
+      
+      .pricing-switcher .fieldset {
+          display: inline-block;
+          position: relative;
+          padding: 2px;
+          border-radius: 50em;
+          border: 2px solid #2d3e50;
+      }
+      
+      .pricing-switcher input[type="radio"] {
+          position: absolute;
+          opacity: 0;
+      }
+      
+      .pricing-switcher label {
+          position: relative;
+          z-index: 1;
+          display: inline-block;
+          float: left;
+          width: 90px;
+          height: 40px;
+          line-height: 40px;
+          cursor: pointer;
+          font-size: 1.4rem;
+          color: #ffffff;
+      }
+      
+      .pricing-switcher .switch {
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          height: 40px;
+          width: 90px;
+          background-color: #2d3e50;
+          border-radius: 50em;
+          -webkit-transition: -webkit-transform 0.5s;
+          -moz-transition: -moz-transform 0.5s;
+          transition: transform 0.5s;
+      }
+      
+      .pricing-header h2 {
+          padding: 0.9em 0.9em 0.6em;
+          font-weight: 400;
+          margin-bottom: 30px;
+          margin-top: 10px;
+          text-transform: uppercase;
+          text-align: center;
+      }
+      
+      .pricing-header {
+          height: auto;
+          padding: 1.9em 0 1.6em;
+          pointer-events: auto;
+          text-align: center;
+          color: #173d50;
+          background-color: transparent;
+      }
+      
+      .exclusive .pricing-header {
+          color: #1bbc9d;
+          background-color: transparent;
+      }
+      
+      .pricing-header h2 {
+          font-size: 2.8rem;
+          letter-spacing: 2px;
+      }
+      
+      .currency,
+      .value {
+        font-size: 4rem;
+                  font-weight: 300;
+      }
+      
+      .duration {
+          font-weight: 700;
+          font-size: 1.3rem;
+          color: #8dc8e4;
+          text-transform: uppercase;
+      }
+      
+      .exclusive .duration {
+          color: #f3b6ab;
+      }
+      
+      .duration::before {
+          content: '/';
+          margin-right: 2px;
+      }
+      
+      .value {
+          font-size: 4rem;
+          font-weight: 300;
+      }
+      
+      .currency, 
+      .duration {
+          color: #1bbc9d;
+      }
+      
+      .exclusive .currency,
+      .exclusive .duration {
+          color: #2d3e50;
+      }
+      
+      .currency {
+          display: inline-block;
+          margin-top: 5px;
+          vertical-align: top;
+          font-size: 2rem;
+          font-weight: 700;
+      }
 }

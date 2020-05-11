@@ -2,7 +2,7 @@
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
-    <h2> Sign In </h2>
+    <h2> Login </h2>
     <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
 
     <!-- Icon -->
@@ -12,19 +12,19 @@
 
     <!-- Login Form -->
     <form>
-      <input type="text" id="email" [(ngModel)]="credenciais.email" name="email" class="fadeIn second" placeholder="Email">
-      <input type="password" [(ngModel)]="credenciais.senha" name="senha" id="senha" class="fadeIn third" placeholder="Password">
+      <input type="text" id="email" [(ngModel)]="credenciais.email" name="email" class="fadeIn second" placeholder="E-mail">
+      <input type="password" [(ngModel)]="credenciais.senha" name="senha" id="senha" class="fadeIn third" placeholder="Senha">
       <input type="submit" (click)="login()" class="fadeIn fourth" value="Log In">
     </form>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" (click)="signup()">I wanna create an account</a>
+      <a class="underlineHover" (click)="signup()">Desejo criar uma conta</a>
     </div>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" (click)="forgotPassword()">Forgot Password</a>
+      <a class="underlineHover" (click)="forgotPassword()">Esqueci minha senha</a>
     </div>
 
   </div>

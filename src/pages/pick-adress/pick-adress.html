@@ -1,13 +1,13 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Finishing Request</ion-title>
+    <ion-title>Escolher endereço</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
     <ion-list-header text-center>
-      Pickup one adress
+      Escolha o endereço
     </ion-list-header>
     <button ion-item *ngFor="let item of items" class="itens" (click)="nextPage(item)">
       <h2>{{item.logradouro}}, {{item.numero}}</h2>

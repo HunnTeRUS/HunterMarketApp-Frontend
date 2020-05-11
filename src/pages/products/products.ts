@@ -23,6 +23,7 @@ export class ProductsPage {
 
   ionViewDidLoad() {
     this.loadData();
+    console.log(this.items);
   }
 
   loadData(){
@@ -34,22 +35,20 @@ export class ProductsPage {
       this.items = this.items.concat(response['content']);
       let end = this.items.length - 1;
       loader.dismiss();
-      console.log(this.page);
-      console.log(this.items);
-      this.loadImageUrls(start, end);
-    }, error => {
+      this.loadImageUrls(start, end)    }
+      , error => {
       loader.dismiss();
     });
   }
 
   loadImageUrls(start:number, end:number){
-    for(var i = start; i<end; i++) {
+    for(var i = start; i<=end; i++) {
       let item = this.items[i];
-      this.produtoService.getSmallImageFromBucket(item.id)
+      if(item.imageId)
+      this.produtoService.getImageFromBucket(item.imageId)
       .subscribe(response => {
-        item.imageUrl = API_CONFIG.bucketBaseUrl + '/prod' + item.id + '-small.jpg';
+        item.imageUrl = API_CONFIG.bucketBaseUrl + '/prod' + item.imageId + '.jpg';
       }, error => {})
-
     }
   }
 
@@ -59,7 +58,7 @@ export class ProductsPage {
 
   presentLoading(){
     let loader = this.loadingController.create({
-      content: "Please wait..."
+      content: "Aguarde..."
     });
     loader.present();
     return loader;
@@ -80,6 +79,10 @@ export class ProductsPage {
     setTimeout(() => {
 
       infiniteScroll.complete();
-    }, 500);
+    }, 1000);
+  }
+
+  returnCategorias(){
+    this.navCtrl.setRoot('CategoriesPage');
   }
 }

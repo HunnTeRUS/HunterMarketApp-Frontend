@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Payments</ion-title>
+    <ion-title>Pagamento</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -9,7 +9,7 @@
   <form [formGroup]="formGroup" (ngSubmit)="nextPage(); $event.preventDefault()">
     <ion-list radio-group formControlName="@type">
       <ion-list-header>
-        Payment Type
+        Tipo do pagamento
       </ion-list-header>
       <ion-item>
         <ion-label>Pagamento com Cartão</ion-label>

@@ -3,7 +3,8 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Products</ion-title>
+    <ion-title>Produtos
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -12,18 +13,35 @@
     <ion-refresher-content></ion-refresher-content>
 </ion-refresher>
 
-  <ion-fab top right edge>
-    <button navPush="CartPage" ion-fab mini><ion-icon name="cart"></ion-icon></button>
-    </ion-fab>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="showDetail(item.id)">
-      <ion-thumbnail item-start>
-        <img [src]="item.imageUrl || 'assets/imgs/productWithoutPhoto.png'"/>
-      </ion-thumbnail>
-      <h2>{{item.nome}}</h2>
-      <h2>{{item.preco | currency}}</h2>
-    </button>
-  </ion-list>
+<ion-fab top right edge>
+  <button *ngIf="items.length <= 0"  style="background-color: #f1c40f;" navPush="CartPage" ion-fab mini>
+  <ion-icon name="cart"></ion-icon></button>
+  <button *ngIf="items.length > 0" style="background-color: black;" navPush="CartPage" ion-fab mini>
+  <ion-icon name="cart"></ion-icon></button>
+</ion-fab>
+
+<div *ngIf="items.length <= 0">
+  <img class="emptyImage" src="assets/imgs/empty.png"/>
+  <label class="labelEmpty">Não há produtos nessa categoria.</label>
+  <button class="buttonEmpty"(click)="returnCategorias()">Voltar</button>
+</div>
+
+
+<section class="grid">
+  <!-- Products -->
+  <div class="product">
+    <div class="product__info" *ngFor="let item of items" (click)="showDetail(item.id)">
+      <div class="imageBlock">
+      <img class="product__image"  [src]="item.imageUrl || 'assets/imgs/productWithoutPhoto.png'" alt="Product" />
+      </div>
+      <h3 class="product__title">{{item.nome}}</h3>
+      <span class="product__year extra highlight">2020</span>
+      <span class="product__price highlight">{{item.preco | currency:"R$"}}</span><br>
+      <button class="action"><i class="fa fa-shopping-cart"></i><span class="action__text">Ver detalhes</span></button>
+    </div>
+  </div>
+
+</section>
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>

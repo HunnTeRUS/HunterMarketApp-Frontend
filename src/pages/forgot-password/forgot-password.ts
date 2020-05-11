@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, setupProvideEvents, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, setupProvideEvents, AlertController, MenuController } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { EmailDTO } from '../../models/email.dto';
@@ -19,19 +19,23 @@ export class ForgotPasswordPage {
     public navParams: NavParams,
     public formBuilder: FormBuilder, 
     public service : AuthService,
-    public alertController : AlertController) {
+    public alertController : AlertController,
+    public menu: MenuController) {
 
     this.formGroup = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]]});
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
+    this.menu.swipeEnable(false);
+  }
+  ionViewDidLeave() {
+    this.menu.swipeEnable(true);
   }
 
   submitPassword(){
     this.emaildto = this.formGroup.value; 
     console.log(this.emaildto);
-
 
     this.service.forgotPassword(this.emaildto).subscribe(response=> {
           let alert = this.alertController.create({

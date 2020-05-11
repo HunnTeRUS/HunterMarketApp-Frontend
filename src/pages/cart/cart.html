@@ -1,3 +1,5 @@
+<script src="index.js"></script>
+
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -14,21 +16,35 @@
         <img [src]="item.produto.imageUrl || 'assets/imgs/productWithoutPhoto.png'"/>
       </ion-thumbnail>
       <h2>{{item.produto.nome}}</h2>
-      <p>{{item.produto.preco | currency}}</p>
-      <ion-icon class="noLineBreak" name="remove-circle" color="primary" (click)="decreaseItem(item.produto)"></ion-icon>
-      <p class="noLineBreak" >{{item.quantidade}}</p>
-      <ion-icon name="add-circle" color="primary" (click)="increaseItem(item.produto)"></ion-icon>
-      <ion-icon name="trash" item-end color="danger" (click)="removeItem(item.produto)"></ion-icon>
+      <p>{{item.produto.preco | currency:"R$"}}</p>
+
+      <!-- <div class="info" style="position: relative; top: 30px">
+         <ion-icon class="noLineBreak" name="md-remove" style="color: red;" (click)="decreaseItem(item.produto)"></ion-icon>
+          <p class="noLineBreak" >{{item.quantidade}}</p>
+        <ion-icon name="md-add" style="color: green;" (click)="increaseItem(item.produto)"></ion-icon>
+      </div> -->
+
+      <div class='range-picker' id='range-picker'>
+        <div (click)="decreaseItem(item.produto)" style="color: red;">-</div><div class='active'>{{item.quantidade}}</div><div (click)="increaseItem(item.produto)" style="color: green;">+</div>
+      </div>
+
+        <img style="padding-left: 82%;" src="assets/imgs/trash.svg" (click)="removeItem(item.produto)"/>
+
+      <!-- <ion-icon name="trash" item-end color="danger" (click)="removeItem(item.produto)"></ion-icon> -->
     </ion-item>
     <ion-item *ngIf="total() > 0">
       <h1>Total</h1>
-      <h1 item-end>{{total()}}</h1>
+      <h1 item-end>{{total() | currency:"R$"}}</h1>
     </ion-item>
-    <ion-item *ngIf="total() <= 0">
-      <h1 text-center>Empty Cart</h1>
-    </ion-item>
+    <div *ngIf="total() <= 0">
+      <label>Carrinho Vazio!</label>
+      <br>
+      <img src="assets/imgs/emptyCart.png"/>
+    </div>
   </ion-list>
-  <button text-center ion-button block (click)="goOn()">Continues Buying</button>
+  <button text-center class="button2 continuesBuying" ion-button block (click)="goOn()">Continuar comprando</button>
 
-  <button *ngIf="total() > 0" text-center color="secondary" ion-button block (click)="checkout()">Finish</button>
+  <button *ngIf="total() > 0" class="button2 finish" text-center color="secondary" ion-button block (click)="checkout()">
+    Finalizar&nbsp;<ion-icon name="checkmark"></ion-icon>
+    </button>
 </ion-content>

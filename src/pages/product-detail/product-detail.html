@@ -1,25 +1,34 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>ProductDetail</ion-title>
+    <ion-title>Detalhes</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-fab top right edge>
-    <button navPush="CartPage" ion-fab mini><ion-icon name="cart"></ion-icon></button>
+    <button style="color: #fff;
+    background-color: #1bbc9d;" navPush="CartPage" ion-fab mini><ion-icon name="cart"></ion-icon></button>
     </ion-fab>
-  <ion-card>
+  <ion-card style="  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);">
     <img [src]="item?.imageUrl || 'assets/imgs/productWithoutPhoto.png'"/>
+  
   <ion-card-content>
     <ion-card-title>
+      <label>
       {{item?.nome}}
+      </label>
     </ion-card-title>
-    <p>
+
+    <div class="price" style="padding-top: 7%;">
+      <span class="currency">R$</span>
+      <span class="value">{{item?.preco | currency:" "}}</span>
+    </div>
+    <!-- <p>
       {{item?.preco | currency}}
-    </p>
+    </p> -->
   </ion-card-content>
 
-<button ion-button block outline (click)="addToCart(item)">Add to a cart</button>
+<button ion-button class="button2 finish" (click)="addToCart(item)">Add to a cart</button>
 </ion-card>
 
 </ion-content>
