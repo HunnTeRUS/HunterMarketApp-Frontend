@@ -29,7 +29,10 @@ export class ClienteService {
     
     getImageFromBucket(id : string) : Observable<any> {
         let url = API_CONFIG.bucketBaseUrl + '/cp' + id + '.jpg';
-        return this.http.get(url, {responseType : 'blob'});
+        let token = this.storage.getLocalUser().token;
+        let authHeader = new HttpHeaders({'Authorization':token});  
+        
+        return this.http.get(url, {'headers':authHeader, responseType : 'blob'});
     } 
 
     insertCliente(cliente: ClienteDTO) {

@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+page-about {
+
+    p{
+        font-family: "Poppins", sans-serif;
+    }
+
+    .titleAbout{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo {
+      max-width: 100%;
+      border: 0;
+      margin-top: -11%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: -15% auto;
+  }
+
+    .socialMedia{
+      height: 45px;
+      background-color: white;
+    }
+
+    button{
+      background-color: white;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media only screen and (min-height: 1000px){
+        .logo {
+          max-width: 100%;
+          border: 0;
+          margin-top: -11%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto;
+      }
+    }
+
+    .social span{
+      font-family: "Poppins", sans-serif;
+      font-size: 15px;
+    }
+
+    @media only screen and (max-width: 410px){
+      .social span{
+        font-size: 11px;
+      }
+    }
+    
+    .github{
+      background-color: black; 
+      color: white; 
+      width: 30%;
+    }
+
+    .facebook{
+      background-color: #3b5998; 
+      color: white;
+      width: 32%;
+    }
+  
+    .instagram{
+      width: 33%;
+    }
+  }

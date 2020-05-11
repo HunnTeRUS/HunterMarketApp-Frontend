@@ -39,6 +39,7 @@ export class MyApp {
       { title: 'Categorias', component: 'CategoriesPage' },
       { title: 'Carrinho', component: 'CartPage' },
       { title: 'Trocar foto', component: 'ChangePicturePage' },
+      { title: 'Sobre', component: 'AboutPage' },
       { title: 'Sair', component: '' }
     ];
 
