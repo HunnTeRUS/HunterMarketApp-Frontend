@@ -59,20 +59,29 @@ page-about {
         font-size: 11px;
       }
     }
+
+    .social{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     
     .github{
       background-color: black; 
       color: white; 
+      margin: 0 1%;
       width: 30%;
     }
 
     .facebook{
       background-color: #3b5998; 
       color: white;
+      margin: 0 1%;
       width: 32%;
     }
   
     .instagram{
       width: 33%;
+      margin: 0 1%;
     }
   }

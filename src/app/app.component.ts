@@ -31,7 +31,6 @@ export class MyApp {
     public storage : StorageService) {
     this.initializeApp();
 
-    this.initializeCliente();
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -42,6 +41,8 @@ export class MyApp {
       { title: 'Sobre', component: 'AboutPage' },
       { title: 'Sair', component: '' }
     ];
+    
+    this.initializeCliente();
 
   }  
 
