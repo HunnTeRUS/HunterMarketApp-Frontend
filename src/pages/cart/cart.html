@@ -28,8 +28,9 @@
         <div (click)="decreaseItem(item.produto)" style="color: red;">-</div><div class='active'>{{item.quantidade}}</div><div (click)="increaseItem(item.produto)" style="color: green;">+</div>
       </div>
 
-        <img style="padding-left: 82%;" src="assets/imgs/trash.svg" (click)="removeItem(item.produto)"/>
-
+      <a style="padding-left: 82%;" (click)="removeItem(item.produto)">
+        <img  src="assets/imgs/trash.svg"/>
+      </a>
       <!-- <ion-icon name="trash" item-end color="danger" (click)="removeItem(item.produto)"></ion-icon> -->
     </ion-item>
     <ion-item *ngIf="total() > 0">

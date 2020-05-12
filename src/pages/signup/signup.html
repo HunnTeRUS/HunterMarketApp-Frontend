@@ -15,21 +15,22 @@
     <ion-item class="ionitem">
       <ion-label stacked>Nome<label style="color:red;"> *</label></ion-label>
       <ion-input formControlName="nome" type="text"></ion-input>
+      <ion-label style="color: red;" class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" >Valor inválido</ion-label>
     </ion-item>
-    <div class="error-validation" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" text-center><p class="danger" >Valor inválido</p></div>
     
     <ion-item class="ionitem">
       <ion-label stacked>Email<label style="color:red;"> *</label></ion-label>
       <ion-input formControlName="email" type="text"></ion-input>
+      <ion-label style="color: red;" class="danger" *ngIf="formGroup.controls.email.dirty && formGroup.controls.email.errors" >Valor inválido</ion-label>
     </ion-item>
-    <p class="danger" *ngIf="formGroup.controls.email.dirty && formGroup.controls.email.errors" >Valor inválido</p>
 
     <ion-item class="ionitem">
       <ion-label stacked>Senha<label style="color:red;"> *</label></ion-label>
       <ion-input formControlName="senha" class="passwordButton" [type]="isTextFieldType ? 'text' : 'password'"></ion-input>
+      <ion-label style="color: red;" class="danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" >Valor inválido</ion-label>
     </ion-item>
-    <p class="danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" >Valor inválido</p>
-    <img class="eye" src="assets/imgs/eye.svg" (click)="togglePasswordFieldType()"/>
+    <img *ngIf="!isTextFieldType" class="eye" src="assets/imgs/eye.svg" (click)="togglePasswordFieldType()"/>
+    <img *ngIf="isTextFieldType" class="eye" src="assets/imgs/eyetraco.png" (click)="togglePasswordFieldType()"/>
 
     <!-- <div class="fadeIn first">
       <ion-label stacked>Senha<label style="color:red;"> *</label></ion-label>
@@ -55,26 +56,26 @@
     <ion-item class="ionitem">
       <ion-label stacked>CPF ou CNPJ</ion-label>
       <ion-input formControlName="cpfOuCnpj" type="number"></ion-input>
+      <ion-label style="color: red;" class="danger" *ngIf="formGroup.controls.cpfOuCnpj.dirty && formGroup.controls.cpfOuCnpj.errors" >Valor inválido</ion-label>
     </ion-item>
-    <p class="danger" *ngIf="formGroup.controls.cpfOuCnpj.dirty && formGroup.controls.cpfOuCnpj.errors" >Valor inválido</p>
     
     <ion-item class="ionitem">
       <ion-label stacked>Logradouro<a style="color:red;"> *</a></ion-label>
       <ion-input formControlName="logradouro" type="text"></ion-input>
+      <ion-label style="color: red;" class="danger" *ngIf="formGroup.controls.logradouro.dirty && formGroup.controls.logradouro.errors" >Valor inválido</ion-label>
     </ion-item>
-    <p class="danger" *ngIf="formGroup.controls.logradouro.dirty && formGroup.controls.logradouro.errors" >Valor inválido</p>
 
     <ion-item class="ionitem">
       <ion-label stacked>Número<label style="color:red;"> *</label></ion-label>
       <ion-input formControlName="numero" type="number"></ion-input>
+      <ion-label style="color: red;" class="danger" *ngIf="formGroup.controls.numero.dirty && formGroup.controls.numero.errors" >Valor inválido</ion-label>
     </ion-item>
-    <p class="danger" *ngIf="formGroup.controls.numero.dirty && formGroup.controls.numero.errors" >Valor inválido</p>
 
     <ion-item class="ionitem">
       <ion-label stacked>Complemento</ion-label>
       <ion-input formControlName="complemento" type="text"></ion-input>
+      <ion-label style="color: red;" class="danger" *ngIf="formGroup.controls.complemento.dirty && formGroup.controls.complemento.errors" >Valor inválido</ion-label>
     </ion-item>
-    <p class="danger" *ngIf="formGroup.controls.complemento.dirty && formGroup.controls.complemento.errors" >Valor inválido</p>
 
     <ion-item class="ionitem">
       <ion-label stacked>Bairro</ion-label>
@@ -84,14 +85,14 @@
     <ion-item class="ionitem">
       <ion-label stacked>CEP<label style="color:red;"> *</label></ion-label>
       <ion-input formControlName="cep" type="number"></ion-input>
+      <ion-label style="color: red;" class="danger" *ngIf="formGroup.controls.cep.dirty && formGroup.controls.cep.errors" >Valor inválido</ion-label>
     </ion-item>
-    <p class="danger" *ngIf="formGroup.controls.cep.dirty && formGroup.controls.cep.errors" >Valor inválido</p>
 
     <ion-item class="ionitem">
       <ion-label stacked>Telefone 1<label style="color:red;"> *</label></ion-label>
       <ion-input formControlName="telefone1" type="number"></ion-input>
+      <ion-label style="color: red;" class="danger" *ngIf="formGroup.controls.telefone1.dirty && formGroup.controls.telefone1.errors" >Valor inválido</ion-label>
     </ion-item>
-    <p class="danger" *ngIf="formGroup.controls.telefone1.dirty && formGroup.controls.telefone1.errors" >Valor inválido</p>
 
     <ion-item class="ionitem">
       <ion-label stacked>Telefone 2</ion-label>
@@ -108,16 +109,16 @@
       <ion-select formControlName="estadoId" (ionChange)="updateCidades()">
         <ion-option *ngFor="let estado of estados; first as f" [value]="estado.id" [selected]="f">{{estado.nome}}</ion-option>
       </ion-select>
+      <ion-label style="color: red;" class="danger" *ngIf="formGroup.controls.estadoId.dirty && formGroup.controls.estadoId.errors">Valor inválido</ion-label>
     </ion-item>
-    <p class="danger" *ngIf="formGroup.controls.estadoId.dirty && formGroup.controls.estadoId.errors">Valor inválido</p>
     
     <ion-item class="ionitem">
       <ion-label stacked>Cidade<label style="color:red;"> *</label></ion-label>
       <ion-select formControlName="cidadeId">
         <ion-option *ngFor="let cidade of cidades" [value]="cidade.id">{{cidade.nome}}</ion-option>
       </ion-select>
+      <ion-label style="color: red;" class="danger" *ngIf="formGroup.controls.cidadeId.dirty && formGroup.controls.cidadeId.errors">Valor inválido</ion-label>
     </ion-item>
-    <p class="danger" *ngIf="formGroup.controls.cidadeId.dirty && formGroup.controls.cidadeId.errors">Valor inválido</p>
     
     <br>
     <button ion-button block type="submit" [disabled]="formGroup.invalid" style="background-color: #ee3e54;">Criar conta</button>

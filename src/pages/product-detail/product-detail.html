@@ -19,16 +19,18 @@
       </label>
     </ion-card-title>
 
-    <div class="price" style="padding-top: 7%;">
-      <span class="currency">R$</span>
-      <span class="value">{{item?.preco | currency:" "}}</span>
-    </div>
+  <div class="price" style="display: flex; align-items: center; justify-content: center;">
+      <div class="price" style="padding-top: 7%;">
+        <span class="currency">R$</span>
+        <span class="value">{{item?.preco | currency:" "}}</span>
+      </div>
+  </div>
     <!-- <p>
       {{item?.preco | currency}}
     </p> -->
   </ion-card-content>
 
-<button ion-button class="button2 finish" (click)="addToCart(item)">Add to a cart</button>
+<button ion-button class="button2 finish" (click)="addToCart(item)">Adicionar ao carrinho</button>
 </ion-card>
 
 </ion-content>

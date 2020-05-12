@@ -40,11 +40,6 @@ color: red
   margin: 5% 0;
 }
 
-.danger{
-  color: red;
-  text-align: center;
-}
-
 input[type="text"],input[type="number"],input[type="password"]{
   height: 20px;
   border: 0;
@@ -88,6 +83,25 @@ input[type="text"],input[type="number"],input[type="password"]{
   width: 100%;
   min-height: 100%;
   padding: 20px;
+}
+
+.passwordError:active{
+    .eye {
+      max-width: 16%;
+      border: 0;
+      min-width: 15%;
+      position: relative;
+      left: 95%;
+      bottom: 95px;
+      visibility: hidden;
+  }
+}
+
+.danger{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
 }
 
 }
