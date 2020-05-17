@@ -1,3 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 page-order-confirmation {
+    ion-content {
+        font-family: "Poppins", sans-serif;
+    }
+
+    .button2{
+        width: 100%;
+        height: 60px;
+        border: 1px solid;
+        border-radius: 8px;
+        margin-top: 16px;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        transition: filter 0.2s;
+        font-size: 14px;
+        background-color: white;
+        color: grey;
+        border-color: grey;
+    }
+
+    .subtotal{
+        display: flex;
+        align-items: end;
+        justify-content: flex-end;
+        margin-top: 10%;
+    }
+
+    .finish{
+      height: 45px;
+      width: 65%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      margin-top: 15%;  
+      border: none;
+      background-color: #00a000;
+      color: white;
+    }
+
+    .return{
+        height: 45px;
+        width: 65%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 5%;  
+        border: none;
+        color: white;
+        background-color: red;
+        margin-bottom: 5%;
+      }
+
+      .return:hover{
+        background-color: white;
+        border-color: #00a000;
+        color: #00a000;
+      }
+
+      .button2 .finish:hover{
+        background-color: white;
+        border-color: red;
+        color: red;
+      }
+
+      .orderConfirmated .orderConfirmationTitle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        margin-top: 10%;
+      }
+
+      .orderConfirmated .orderConfirmationImg{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        margin-top: 7%;
+        }
+
+        .orderConfirmated .returnHome{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 15% auto;
+        width: 50%;
+        height: 40px;
+        background-color: #888ac1;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        }
+
+        .orderConfirmated .orderConfirmationDescription{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .orderConfirmated .orderConfirmationEmail{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+      
+
 
 }

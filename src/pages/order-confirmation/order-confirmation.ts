@@ -21,6 +21,7 @@ export class OrderConfirmationPage {
   cliente: ClienteDTO;
   endereco: EnderecoDTO;
   codPedido: string;
+  now = new Date;
 
   constructor(
     public navCtrl: NavController,
@@ -37,6 +38,7 @@ export class OrderConfirmationPage {
     this.cartItems = this.cartService.getCart().items;
 
     this.clienteService.findById(this.pedido.cliente.id).subscribe(response => {
+      this.getDateAfter7days();
       this.cliente = response as ClienteDTO;
       this.endereco = this.findEndereco(this.pedido.enderecoDeEntrega.id, response['enderecos']);
     }, error => {
@@ -79,5 +81,9 @@ export class OrderConfirmationPage {
     let position = location.lastIndexOf('/');
 
     return location.substring(position+1, location.length);
+  }
+
+  public getDateAfter7days(){
+    return this.now.setDate(this.now.getDate() +7);
   }
 }

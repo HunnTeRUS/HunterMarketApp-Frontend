@@ -22,14 +22,15 @@
             <img [src]="item.produto.imageUrl || 'assets/imgs/productWithoutPhoto.png'">
           </ion-thumbnail>
           <h2>{{item.produto.nome}}</h2>
-          <p>{{item.produto.preco | currency}}</p>
-          <p class="nolinebreak">{{item.quantidade}}</p>
-          <p item-end>{{item.produto.preco * item.quantidade | currency}}</p>
+          <p>Unidade: {{item.produto.preco | currency:"R$"}}</p>
+          <p>Quantidade: {{item.quantidade}}</p>
+          <p class="subtotal">Subtotal: {{item.produto.preco * item.quantidade | currency:"R$"}}</p>
+          <hr>
         </ion-item>
 
         <ion-item>
-          <h2>Total</h2>
-          <h2 item-end>{{total() | currency}}</h2>
+          <h2 style="font-weight: bold;">Total</h2>
+          <h2 style="font-weight: bold" item-end>{{total() | currency:"R$"}}</h2>
         </ion-item>
       </ion-list>
     </ion-card>
@@ -67,24 +68,25 @@
       </ion-item>
       <ion-item *ngIf="pedido.pagamento['@type']=='pagamentoComBoleto'">
         <h3>Pagamento com boleto</h3>
+        <p>Vencimento do boleto: {{now.getDate()}}/{{now.getMonth()}}/{{now.getFullYear()}}</p>
       </ion-item>
     </ion-card>
-    <button ion-button block (click)="checkout()">Confirmar Pedido</button>
-    <button ion-button block outline (click)="back()">Voltar</button>
+    <button ion-button block (click)="checkout()" class="button2 finish">
+      Confirmar Pedido&nbsp;
+      <ion-icon name="checkmark"></ion-icon>
+    </button>
+    <button ion-button block outline (click)="back()" class="button2 return">Voltar</button>
   </div>
 
-  <div *ngIf="codPedido">
-    <ion-card>
-      <ion-card-header text-center>
-        Seu pedido foi registrado!.
-      </ion-card-header>
-      <ion-item>
-        <h2>Código do pedido: {{codPedido}}</h2>
-        <p>Verifique seu email</p>
-      </ion-item>
-    </ion-card>
+  <div class="orderConfirmated" *ngIf="codPedido">
+        <h2 class="orderConfirmationTitle">Seu pedido foi registrado!</h2>
 
-    <button ion-button block outline (click)="home()">Voltar</button>
+        <img class="orderConfirmationImg" src="assets/imgs/OrderConfirmation.svg" />
+
+        <h2 class="orderConfirmationDescription">Código do pedido: {{codPedido}}</h2>
+        <p class="orderConfirmationEmail">Verifique seu email</p>
+
+    <button ion-button block outline class ="returnHome"(click)="home()">Voltar</button>
   </div>
 
 </ion-content>
