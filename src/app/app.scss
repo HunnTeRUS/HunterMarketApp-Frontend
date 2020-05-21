@@ -2,6 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Abel);
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,700&display=swap');
+
 #Profile {
     position: absolute;
     margin: auto;
@@ -10,6 +11,10 @@
     width: 150px;
     height: 150px;
     border-radius: 150px;
+}
+
+ion-title {
+  font-family: 'Poppins', sans-serif;
 }
 
 ion-content {
@@ -62,5 +67,5 @@ ion-content {
 }
 
 ion-list span{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }

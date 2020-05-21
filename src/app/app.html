@@ -11,7 +11,7 @@
       <img [src]="cliente?.imageUrl || 'assets/imgs/padrao.png'"/>
       <span>{{cliente?.nome}}</span>
     </div>
-    <ion-list style="margin-top: 43%;">     
+    <ion-list style="margin-top: 43%;" no-line>     
       <!-- <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)"> -->
         <ion-icon menuClose ion-item (click)="openPage(pages[0])" class="fa fa-font" name="logo-snapchat" width="150px"><span>&nbsp;&nbsp;{{pages[0].title}}</span></ion-icon> 
         <ion-icon menuClose ion-item (click)="openPage(pages[1])" class="fa fa-font" name="md-list" width="150px"><span>&nbsp;&nbsp;{{pages[1].title}}</span></ion-icon> 
