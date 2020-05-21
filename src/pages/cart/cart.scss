@@ -6,6 +6,10 @@ page-cart {
         padding-right: 10px;
     }
 
+    ion-content {
+      font-family: "Poppins", sans-serif;
+    }
+
     body {
         font-family: "Poppins", sans-serif;
         height: 100vh;
@@ -31,18 +35,6 @@ page-cart {
         border-color: grey;
     }
 
-
-
-    img {
-        max-width: 100%;
-        border: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-      }
-
       label{
         font-family: "Poppins", sans-serif;
         display: flex;
@@ -54,26 +46,10 @@ page-cart {
         font-size: 18px;
       }
 
-    .finish{
-      height: 45px;
-      width: 65%;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto;
-      margin-top: 15%;  
-      border-color: #00a000;
-      color: #00a000;
-    }
-
-    .finish:hover{
-      border-color: #00a000;
-      background-color: white;
-      color: #00a000;
-    }
-
-    .continuesBuying{
+      ion-content .finish{
+        border: 1px solid;
+        border-radius: 8px;
+        margin-top: 16px;
         height: 45px;
         width: 65%;
         display: flex;
@@ -81,13 +57,40 @@ page-cart {
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        margin-top: 15%;    }
+        margin-top: 15%;  
+        border-color: #00a000;
+        color: white;
+        border: none;
+    }
+
+    ion-content .finish:hover{
+      border-color: #00a000;
+      background-color: white;
+      color: #00a000;
+    }
+
+    .continuesBuying{
+        border: 1px solid;
+        border-radius: 8px;
+        margin-top: 16px;
+        height: 45px;
+        width: 65%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 15%;  
+        background-color: grey;
+        color: white;
+        border: none;
+      }
 
 
     .continuesBuying:hover{
       border-color: grey;
-      background-color: grey;
-      color: white;
+      background-color: white;
+      color: grey;
     }
 
 

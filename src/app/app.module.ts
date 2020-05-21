@@ -18,7 +18,6 @@ import { ProductDetailPage } from '../pages/product-detail/product-detail';
 import { CartService } from '../services/domain/cart.service';
 import { Camera } from '@ionic-native/camera';
 import { ImageUtilService } from '../services/image-util.service';
-import { ProductsPage } from '../pages/products/products';
 
 @NgModule({
   declarations: [

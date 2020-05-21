@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { PedidoDTO } from '../../models/pedido.dto';
 import { CartItem } from '../../models/cart.item';
 import { CartService } from '../../services/domain/cart.service';
@@ -29,7 +29,8 @@ export class OrderConfirmationPage {
     public cartService: CartService,
     public clienteService: ClienteService,
     public pedidoService: PedidoService,
-    public http: HttpClient)
+    public http: HttpClient, 
+    public loadingController: LoadingController )
     {
     this.pedido = this.navParams.get('pedido');
     }
@@ -64,16 +65,18 @@ export class OrderConfirmationPage {
   }
 
   checkout() {
+    let loader = this.presentLoading();
     this.pedidoService.insert(this.pedido)
     .subscribe((res: HttpResponse<any>)=> {
+        loader.dismiss();
         this.cartService.createOfClearCart();
         this.codPedido = this.extractId(res.headers.get('Location'));
-        console.log(res.headers.get('Location'))
       },
       error => {
         if (error.status == 403) {
           this.navCtrl.setRoot('HomePage');
         }
+        loader.dismiss();    
       });
   }
 
@@ -85,5 +88,13 @@ export class OrderConfirmationPage {
 
   public getDateAfter7days(){
     return this.now.setDate(this.now.getDate() +7);
+  }
+
+  presentLoading(){
+    let loader = this.loadingController.create({
+      content: "Processando seu pedido, aguarde..."
+    });
+    loader.present();
+    return loader;
   }
 }

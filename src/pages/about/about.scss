@@ -2,6 +2,15 @@
 
 page-about {
 
+    a {
+      text-decoration: none;
+      font-family: "Poppins", sans-serif;
+    }
+
+    ion-content {
+      font-family: "Poppins", sans-serif;
+    }
+
     p{
         font-family: "Poppins", sans-serif;
     }

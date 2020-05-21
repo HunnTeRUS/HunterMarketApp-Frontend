@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { CartItem } from '../../models/cart.item';
 import { StorageService } from '../../services/storage.service';
 import { ProdutoService } from '../../services/domain/produto.service';

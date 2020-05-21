@@ -1,5 +1,3 @@
-<script src="index.js"></script>
-
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -28,7 +26,10 @@
         <div (click)="decreaseItem(item.produto)" style="color: red;">-</div><div class='active'>{{item.quantidade}}</div><div (click)="increaseItem(item.produto)" style="color: green;">+</div>
       </div>
 
-      <a style="padding-left: 82%;" (click)="removeItem(item.produto)">
+      <a style="display: flex;
+      align-items: end;
+      justify-content: flex-end;
+      margin-top: 10%;" (click)="removeItem(item.produto)">
         <img  src="assets/imgs/trash.svg"/>
       </a>
       <!-- <ion-icon name="trash" item-end color="danger" (click)="removeItem(item.produto)"></ion-icon> -->
@@ -40,12 +41,12 @@
     <div *ngIf="total() <= 0">
       <label>Carrinho Vazio!</label>
       <br>
-      <img src="assets/imgs/emptyCart.png"/>
+      <img style="display: flex; align-items: center; justify-content: center; margin: 0 auto;" src="assets/imgs/emptyCart.png"/>
     </div>
   </ion-list>
-  <button text-center class="button2 continuesBuying" ion-button block (click)="goOn()">Continuar comprando</button>
+  <button text-center class="continuesBuying" ion-button block (click)="goOn()">Continuar comprando</button>
 
-  <button *ngIf="total() > 0" class="button2 finish" text-center color="secondary" ion-button block (click)="checkout()">
+  <button *ngIf="total() > 0" class="finish" text-center color="secondary" ion-button block (click)="checkout()">
     Finalizar&nbsp;<ion-icon name="checkmark"></ion-icon>
     </button>
 </ion-content>

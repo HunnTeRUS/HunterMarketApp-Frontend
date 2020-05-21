@@ -1,3 +1,25 @@
 page-payments {
 
+    .continueButton{
+        border: 1px solid;
+        border-radius: 8px;
+        margin-top: 16px;
+        height: 45px;
+        width: 65%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 15%;  
+        background-color: #488AFF;
+        color: white;
+        border: none;
+    }
+
+    .continueButton:hover{
+        background-color: white;
+        color: #488AFF;
+        border-color: #488AFF;
+    }
 }

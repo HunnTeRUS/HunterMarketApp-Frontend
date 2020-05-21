@@ -16,9 +16,6 @@ page-order-confirmation {
         text-decoration: none;
         transition: filter 0.2s;
         font-size: 14px;
-        background-color: white;
-        color: grey;
-        border-color: grey;
     }
 
     .subtotal{
@@ -59,14 +56,19 @@ page-order-confirmation {
 
       .return:hover{
         background-color: white;
-        border-color: #00a000;
-        color: #00a000;
-      }
-
-      .button2 .finish:hover{
-        background-color: white;
         border-color: red;
         color: red;
+        -webkit-transition:background .5s ease;
+        transition:background .5s ease;
+      }
+
+      .finish:hover{
+        background-color: white;
+        border-color: #00a000;
+        color: #00a000;
+
+        -webkit-transition:background .5s ease;
+        transition:background .5s ease;
       }
 
       .orderConfirmated .orderConfirmationTitle{
