@@ -18,6 +18,7 @@ import { ProductDetailPage } from '../pages/product-detail/product-detail';
 import { CartService } from '../services/domain/cart.service';
 import { Camera } from '@ionic-native/camera';
 import { ImageUtilService } from '../services/image-util.service';
+import { NavigationBar } from '@ionic-native/navigation-bar/ngx';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ImageUtilService } from '../services/image-util.service';
     ProductDetailPage,
     CartService,
     Camera,
-    ImageUtilService
+    ImageUtilService,
+    NavigationBar
     ]
 })
 export class AppModule {}

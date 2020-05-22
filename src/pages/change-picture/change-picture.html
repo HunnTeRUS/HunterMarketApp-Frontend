@@ -13,16 +13,19 @@
       <span>Foto Atual</span>
   </div>
   <br/>
-  <div id="Profile2" *ngIf="picture">
-    <img [src]="picture"/>
+  <div id="Profile" *ngIf="picture" style="top: 20%;">
+    <img [src]="picture" style="width: 150px;
+    height: 150px;"/>
     <span>Nova foto</span>
   </div>
 
   <ion-footer>
     <ion-toolbar>
-    <button ion-button block (click)="getCameraPicture()" [disabled]="cameraOn">Camera</button>
-    <button ion-button block primary (click)="sendPicture()" *ngIf="picture">Send Image</button>
-    <button ion-button block style="background-color: red;"(click)="cancel()" *ngIf="picture">Cancel</button>
+    <button ion-button block (click)="getCameraPicture()" [disabled]="cameraOn">
+      <ion-icon name="md-camera"></ion-icon>
+    </button>
+    <button ion-button block primary (click)="sendPicture()" *ngIf="picture">Salvar Imagem</button>
+    <button ion-button block style="background-color: red;"(click)="cancel()" *ngIf="picture">Cancelar</button>
     </ion-toolbar>
   </ion-footer>
 </ion-content>

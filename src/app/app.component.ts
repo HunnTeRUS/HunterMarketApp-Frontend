@@ -8,11 +8,17 @@ import { ClienteService } from '../services/domain/cliente.service';
 import { StorageService } from '../services/storage.service';
 import { API_CONFIG } from '../config/api.config';
 
+import { timer } from 'rxjs/observable/timer';
+
+
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  selector: 'page-app',
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
+
+  showSplash = true;
 
   rootPage: string = 'HomePage';
 
@@ -61,6 +67,8 @@ export class MyApp {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      timer(3000).subscribe(() => this.showSplash = false)
     });
   }
 

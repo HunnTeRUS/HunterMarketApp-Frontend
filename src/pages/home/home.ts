@@ -3,6 +3,7 @@ import { NavController, IonicPage, MenuController, LoadingController } from 'ion
 import { CredenciaisDTO } from '../../models/credenciais.dto';
 import { AuthService } from '../../services/auth.service';
 import { MyApp } from '../../app/app.component';
+import { NavigationBar } from '@ionic-native/navigation-bar/ngx';
 
 @IonicPage()
 @Component({
@@ -21,7 +22,8 @@ export class HomePage {
     public menu: MenuController, 
     public auth: AuthService, 
     public loadingController: LoadingController, 
-    public myapp: MyApp) {
+    public myapp: MyApp,
+    public navigationBar: NavigationBar) {
   }
 
   ionViewWillEnter() {
