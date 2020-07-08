@@ -12,4 +12,4 @@ I did not create functions to purchase products, just a simulation.
 
 And a lot of other's screens that i'd created. The app is hospedated in heroku, then if in the login or cadaster delay, is because of heroku's cooldown. 
 
-If you wanna try the app, download it here: https://mega.nz/file/yRxlRDAZ.
+If you wanna try the app, download it here: https://mega.nz/file/yRxlRDAZ#VI_mDzacdcNjVk-pwl0ysrBs54-nBftNQDHuTLGwECI
