@@ -1,5 +1,5 @@
 # HunterMarketApp-Frontend
-This is a frontend part of one of my projects, that i made and is private in my github. The app simulates a e-commerce service, with users profiles and their informations, list of products with photos, description and price, discounts, categories and etc.
+This is a frontend part of one of my projects, called HunterMarketApp. The app simulates a e-commerce service, with users profiles and their informations, list of products with photos, description and price, discounts, categories and etc.
 
 I did not create functions to purchase products, just a simulation.
 <br>
